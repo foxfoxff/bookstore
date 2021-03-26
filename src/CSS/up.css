@@ -1,0 +1,63 @@
+@import '~antd/dist/antd.css';
+
+    /* {通用样式开始} */
+
+/* {通用样式结束} */
+/* {导航栏基础样式} */
+.header
+{
+
+    top: 0;
+    left: 0;
+
+    height: 5rem;
+    padding: 0 10vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 1000;
+}
+{/*{导航栏新样式}*/}
+
+.nav ul
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+.nav ul li
+{
+    list-style: none;
+}
+.nav ul li a
+{
+    color: #686666;
+    padding: 0 20px;
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+.brand{
+   
+    font-family: 'Indie Flower';
+    font-size: 40px;
+}
+
+@font-face {
+    font-family: 'Indie Flower';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/indieflower/v12/m8JVjfNVeKWVnh3QMuKkFcZVaUuH.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
