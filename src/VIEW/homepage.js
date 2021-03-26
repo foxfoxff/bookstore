@@ -17,13 +17,15 @@ const booklist1=[
     "HTML5+CSS3+JavaScript从入门到精通",
     "中国水利水电出版",
     "￥67.40",
+    "1"
 
 ];
 const booklist2=[
     "https://img14.360buyimg.com/n1/s200x200_jfs/t1/148121/18/9077/162549/5f6cc8beEbea70b6f/c6f63030adadbb26.jpg",
     "前端开发核心知识进阶：从夯实基础到突",
     "电子工业出版社",
-    "￥68.10"
+    "￥68.10",
+    "2"
 ];
 export default class Homepage extends React.Component {
 

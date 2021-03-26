@@ -11,7 +11,7 @@ class Upnav extends React.Component {
         return (
             <div className="header" id="header">
                 <div className="brand" >
-                    <Link to="/">
+                    <Link to="/homepage">
                         e-bookstore
                     </Link>
                 </div>
