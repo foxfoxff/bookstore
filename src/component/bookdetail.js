@@ -1,5 +1,5 @@
 import React from 'react';
-import { Descriptions, Button } from 'antd';
+import {Descriptions, Button, Space} from 'antd';
 
 
 const booklist1=[
@@ -32,7 +32,7 @@ export default class Bookdetail extends React.Component{
         if(this.props.id== "1"){
             return (
                 <div className={"content"}>
-                    <div className={"book-detail"}>
+                    <div className={"book-detail"} style={{display:'flex'}}>
                         <div className={"book-image"}><img alt="image" src={booklist1[0]} style={{width:"350px", height:"350px"}}/></div>
                         <div className={"descriptions"}>
                             <Descriptions>
@@ -45,7 +45,7 @@ export default class Bookdetail extends React.Component{
                             </Descriptions>
                         </div>
                     </div>
-                    <div className={"button-groups"}>
+                    <div className={"button-groups"} style={{textAlign:'center'}}>
                         <Button type="danger"  size={"large"}>
                             加入购物车
                         </Button>
@@ -62,8 +62,9 @@ export default class Bookdetail extends React.Component{
         else{
             return (
                 <div className={"content"}>
-                    <div className={"book-detail"}>
+                    <div className={"book-detail"} style={{display:'flex'}}>
                         <div className={"book-image"}><img alt="image" src={booklist2[0]} style={{width:"350px", height:"350px"}}/></div>
+                        <Space />
                         <div className={"descriptions"}>
                             <Descriptions>
                                 <Descriptions.Item className={"title"} span={3}>{booklist2[1]}</Descriptions.Item>
@@ -75,12 +76,12 @@ export default class Bookdetail extends React.Component{
                             </Descriptions>
                         </div>
                     </div>
-                    <div className={"button-groups"}>
-                        <Button type="danger" icon="shopping-cart" size={"large"}>
+                    <div className={"button-groups"} style={{textAlign:'center'}}>
+                        <Button type="danger"  size={"large"}>
                             加入购物车
                         </Button>
 
-                        <Button type="danger" icon="pay-circle" size={"large"} style={{marginLeft:"15%"}}ghost>
+                        <Button type="danger"  size={"large"} style={{marginLeft:"15%"}}ghost>
                             立即购买
                         </Button>
                     </div>

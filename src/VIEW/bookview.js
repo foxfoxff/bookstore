@@ -31,10 +31,10 @@ class BookView extends React.Component {
                     <Sider theme={"light"}>
                         <Sidemenu />
                     </Sider>
-                    <Content style={{padding: '0 50px'}}>
-                        <div className="home-content">
+                    <Content style={{padding: '0 50px',height:'100vh',}}>
+                        <div className="home-content" style={{marginTop:'5vh'}} >
 
-                           <Bookdetail id={bookId}/>
+                           <Bookdetail id={bookId} />
                         </div>
                     </Content>
                 </Layout>
