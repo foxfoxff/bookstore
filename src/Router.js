@@ -5,27 +5,12 @@ import Homepage from './VIEW/homepage';
 import Browser from "./VIEW/browser";
 import Signin from "./VIEW/signin";
 import BookView from "./VIEW/bookview";
-/*
-class BasicRoute extends React.Component{
-    constructor(props) {
-        super(props);
-    }
-
-    render(){
-        return(
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={Login}/>
-                    <Route exact path="/homepage" component={Homepage}/>
-                    <Route exact path="/browser" component={Browser}/>
-
-                </Switch>
-            </Router>
-        )
-    }
+import Cart from "./VIEW/cart";
+import Cartlist from "./VIEW/testprolist";
 
 
-}*/
+
+
 const BasicRoute = () => (
     <HashRouter>
         <Switch>
@@ -34,6 +19,7 @@ const BasicRoute = () => (
             <Route exact path="/browser" component={Browser}/>
             <Route exact path="/bookview" component={BookView}/>
             <Route exact path="/register" component={Signin}/>
+            <Route exact path="/Cart" component={Cartlist}/>
         </Switch>
     </HashRouter>
 );

@@ -36,10 +36,7 @@ export default class Signin extends React.Component {
                             scrollToFirstError
 
                         >
-                            <Form.Item
-
-
-                            >
+                            <Form.Item>
                                <h1>SIGN IN</h1>
                             </Form.Item>
                             <Form.Item

@@ -59,9 +59,10 @@ export default class Login extends React.Component {
                         </Form.Item>
 
                         <Form.Item>
-                            <Button type="primary" htmlType="submit" className="login-form-button">
+                            <Link to="/homepage"> <Button type="primary" htmlType="submit" className="login-form-button">
                                 Log in
-                            </Button>
+                            </Button></Link>
+
                             <br/>Or <Link to="/register">register now!</Link>
                         </Form.Item>
                     </Form>

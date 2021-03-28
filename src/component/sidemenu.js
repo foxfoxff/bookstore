@@ -11,6 +11,7 @@ export default class Sidemenu extends React.Component {
 
             <Menu style={{textAlign:'center'}} >
                 <Menu.Item key="1" icon={<HomeOutlined />}>
+                    <Link to={"./homepage"}/>
                     网站首页
                 </Menu.Item>
                 <Menu.Item key="2" icon={<ShoppingCartOutlined />}>
@@ -20,7 +21,7 @@ export default class Sidemenu extends React.Component {
                     我的订单
                 </Menu.Item>
                 <Menu.Item key="4" icon={<ReadOutlined />}>
-                     <Link to="../Browser">
+                     <Link to="./browser">
                          所有图书
                 </Link>
                 </Menu.Item>
