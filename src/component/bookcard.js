@@ -16,9 +16,9 @@ export default class Bookcard extends React.Component {
                     <img alt="example" width="100%" src={this.props.src} />
                 </div>
                 <div >
-                    <h3>{this.props.bookname}</h3>
+                    <h3>{this.props.bookname.length>20?this.props.bookname.substr(0,25)+"..":this.props.bookname}</h3>
                     <p>{this.props.writer}</p>
-                    <p>{this.props.price}</p>
+                    <p style={{color:'red'}}>{this.props.price}</p>
                 </div>
                 </Card>
             </Link>

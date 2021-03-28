@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import {
     Form,
     Input,
-    Cascader,
-    Select,
-    Row,
-    Col,
     Checkbox,
     Button,
     AutoComplete,
@@ -37,7 +33,7 @@ export default class Signin extends React.Component {
 
                         >
                             <Form.Item>
-                               <h1>SIGN IN</h1>
+                               <h1>SIGN UP</h1>
                             </Form.Item>
                             <Form.Item
                                 name="email"

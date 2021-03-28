@@ -12,7 +12,7 @@ const booklist1={
 };
 const booklist2={
     src: "https://img14.360buyimg.com/n1/s200x200_jfs/t1/148121/18/9077/162549/5f6cc8beEbea70b6f/c6f63030adadbb26.jpg",
-    bookname: "前端开发核心知识进阶：从夯实基础到突",
+    bookname: "前端开发核心知识进阶：从夯实基础到突破瓶颈",
     writer: "电子工业出版社",
     price:"￥68.10",
     id:"2"

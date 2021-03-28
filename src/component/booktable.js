@@ -43,7 +43,7 @@ const booklist2=[
 
 
         return (
-            <div style={{clear:'both', marginLeft:'15vw'}}>
+            <div >
                 <span style={{fontSize:40}}>{this.props.choose?"好书推荐":"畅销书籍"}</span>
 
                 <label
