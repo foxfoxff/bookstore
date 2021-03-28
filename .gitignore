@@ -22,3 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 fronted.rar
+src/VIEW/cart.js
+src/VIEW/testprolist.js
