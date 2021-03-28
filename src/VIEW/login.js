@@ -3,7 +3,7 @@ import { Layout ,Button,Card} from 'antd';
 import 'antd/dist/antd.css';
 import { Input,Form,Checkbox} from 'antd';
 import { UserOutlined,LockOutlined } from '@ant-design/icons';
-import '../CSS/signin.css'
+import '../CSS/usedfont.css'
 import {Link} from "react-router-dom";
 
 const { Header, Footer,  Content } = Layout;
