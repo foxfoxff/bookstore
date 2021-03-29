@@ -85,7 +85,7 @@ export default class Browser extends React.Component {
                             <div style={{marginTop:'3%',order:'1'}}>
                                 <Searchbar />
                             </div>
-                            <div style={{order:'2'}}>
+                            <div style={{order:'2',width:'1000px'}}>
                                 <Booklist bookline={data} />
                             </div>
                         </div>

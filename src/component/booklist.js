@@ -1,6 +1,6 @@
 import React from "react";
 import Bookcard from "./bookcard";
-import { Progress, Tag } from 'antd';
+import { Progress, Tag,List } from 'antd';
 import ProList from '@ant-design/pro-list';
 import {Row,Col,Space} from 'antd'
 /*class Bookline extends React.Component{
@@ -88,10 +88,14 @@ export default class Booklist extends React.Component {
 
 
              </div>*/
-            <ProList pagination={{defaultPageSize: 25, showSizeChanger: false}}
-                     grid={{column: 5}}
-                     metas={{content: {}, avatar: false}} dataSource={list} size="small"
-
+            <List pagination={{defaultPageSize: 25, showSizeChanger: false}}
+                     grid={{column: 5, gutter: 0,justify:'center'}}
+                    dataSource={list} size="small"
+                  renderItem={item => (
+                      <List.Item>
+                          {item.content}
+                      </List.Item>
+                  )}
             />
 
 
