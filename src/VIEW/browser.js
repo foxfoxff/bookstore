@@ -81,14 +81,14 @@ export default class Browser extends React.Component {
                         <Sidemenu />
                     </Sider>
                     <Content>
-                        <div style={{display:'flex',flexDirection:'column',justifyContent:'flex-start',alignItems:'center'}}>
-                            <div style={{marginTop:'3%',order:'1'}}>
+
+                            {/*<div style={{marginTop:'3%',order:'1'}}>
                                 <Searchbar />
-                            </div>
-                            <div style={{order:'2',width:'1000px'}}>
+                            </div>*/}
+                            <div style={{height:50}}></div>
+                            <div style={{margin:'0 auto',width:'1000px'}}>
                                 <Booklist bookline={data} />
                             </div>
-                        </div>
 
 
 

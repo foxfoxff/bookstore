@@ -1,102 +1,87 @@
 import React from "react";
 import Bookcard from "./bookcard";
-import { Progress, Tag,List } from 'antd';
+import {Progress, Tag, List, Breadcrumb} from 'antd';
 import ProList from '@ant-design/pro-list';
 import {Row,Col,Space} from 'antd'
-/*class Bookline extends React.Component{
-    render() {
-        return(
-
-            <Row>
-                <Space>
-                    <Col>
-
-                        <Bookcard  src={this.props.books[0].src}
-                                   bookname={this.props.books[0].bookname}
-                                   writer={this.props.books[0].writer}
-                                   price={this.props.books[0].price}
-                                   id={this.props.books[0].id} />
-                    </Col>
-                    <Col>
-                        <Bookcard  src={this.props.books[1].src}
-                                   bookname={this.props.books[1].bookname}
-                                   writer={this.props.books[1].writer}
-                                   price={this.props.books[1].price}
-                                   id={this.props.books[1].id} />
-                    </Col>
-                    <Col>
-                        <Bookcard  src={this.props.books[2].src}
-                                   bookname={this.props.books[2].bookname}
-                                   writer={this.props.books[2].writer}
-                                   price={this.props.books[2].price}
-                                   id={this.props.books[2].id}/>
-                    </Col>
-                    <Col>
-                        <Bookcard  src={this.props.books[3].src}
-                                   bookname={this.props.books[3].bookname}
-                                   writer={this.props.books[3].writer}
-                                   price={this.props.books[3].price}
-                                   id={this.props.books[3].id}/>
-                    </Col>
-                    <Col>
-                        <Bookcard  src={this.props.books[4].src}
-                                   bookname={this.props.books[4].bookname}
-                                   writer={this.props.books[4].writer}
-                                   price={this.props.books[4].price}
-                                   id={this.props.books[4].id}/>
-                    </Col>
-
-                </Space>
+import { Input} from 'antd';
 
 
-            </Row>
-
-
-
-
-        )
-    }
-}*/
+const { Search } = Input;
 export default class Booklist extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: this.props.bookline
+            data: this.props.bookline,
+
+            flitter:""
         }
     }
+ handleSearch=(e)=>{
+        if(e!=null)
+        this.setState({flitter:e})
+     else this.setState({flitter:""})
+ }
 
     render() {
-        const list = this.state.data.map(
-            (item) => ({
-                content: <Bookcard src={item.src}
-                                   bookname={item.bookname}
-                                   writer={item.writer}
-                                   price={item.price}
-                                   id={item.id}/>
-            })
-        );
+
+        let list=[];
+        this.state.data.forEach((item, index, array) => {
+            if(item.bookname.includes(this.state.flitter)){
+                let newnode={ content: <Bookcard src={item.src}
+                                                 bookname={item.bookname}
+                                                 writer={item.writer}
+                                                 price={item.price}
+                                                 id={item.id}/>}
+                  list.push(newnode);
+            }
+        })
 
         return (
-            /* <div >
-               <Space direction="vertical">
-                   <Bookline books={this.state.line[0]}/>
-                   <Bookline books={this.state.line[1]}/>
-                   <Bookline books={this.state.line[2]}/>
-                   <Bookline books={this.state.line[3]}/>
-                   <Bookline books={this.state.line[4]}/>
-               </Space>
+            <div  style={{display:'flex',flexDirection:'column',justifyContent:'space-between',alignItems:'center'}}>
+                <div style={{height:80,order:'1'}}>
+                    <Search
+                        placeholder="input search text"
+                        allowClear
+                        enterButton="Search"
+                        size="large"
+                        style={{ width: 700 ,height:40}}
+                        onSearch={this.handleSearch}
+
+                    />
+                    <Breadcrumb separator={"|"} style={{fontSize:2}}>
+                        <Breadcrumb.Item>Home</Breadcrumb.Item>
+                        <Breadcrumb.Item>
+                            csapp
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item>
+                            vue
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item>
+                            React
+                        </Breadcrumb.Item>
+                        Java
+                        <Breadcrumb.Item>
+                            {" "}
+                        </Breadcrumb.Item>
+                    </Breadcrumb>
+                </div>
+                <List pagination={{defaultPageSize: 25, showSizeChanger: false}}
+                      grid={{column: 5, gutter: 0,justify:'center'}}
+                      dataSource={list} size="small"
+                      renderItem={item => (
+                          <List.Item>
+                              {item.content}
+                          </List.Item>
+                      )}
+                      style={{order:'2'}}
+                />
 
 
-             </div>*/
-            <List pagination={{defaultPageSize: 25, showSizeChanger: false}}
-                     grid={{column: 5, gutter: 0,justify:'center'}}
-                    dataSource={list} size="small"
-                  renderItem={item => (
-                      <List.Item>
-                          {item.content}
-                      </List.Item>
-                  )}
-            />
+
+
+
+            </div>
+
 
 
         )
