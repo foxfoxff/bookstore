@@ -15,7 +15,9 @@ export default class Sidemenu extends React.Component {
                     网站首页
                 </Menu.Item>
                 <Menu.Item key="2" icon={<ShoppingCartOutlined />}>
-                    我的购物车
+                    <Link to="./cart">
+                        我的购物车
+                    </Link>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<ProfileOutlined />}>
                     我的订单

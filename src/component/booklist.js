@@ -26,7 +26,7 @@ export default class Booklist extends React.Component {
 
         let list=[];
         this.state.data.forEach((item, index, array) => {
-            if(item.bookname.includes(this.state.flitter)){
+            if(item.bookname.toLowerCase().includes(this.state.flitter.toLowerCase())){
                 let newnode={ content: <Bookcard src={item.src}
                                                  bookname={item.bookname}
                                                  writer={item.writer}

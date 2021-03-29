@@ -6,7 +6,7 @@ import Browser from "./VIEW/browser";
 import Signin from "./VIEW/signin";
 import BookView from "./VIEW/bookview";
 import Cart from "./VIEW/cart";
-import Cartlist from "./VIEW/testprolist";
+
 
 
 
@@ -19,7 +19,7 @@ const BasicRoute = () => (
             <Route exact path="/browser" component={Browser}/>
             <Route exact path="/bookview" component={BookView}/>
             <Route exact path="/register" component={Signin}/>
-            <Route exact path="/Cart" component={Cartlist}/>
+            <Route exact path="/cart" component={Cart}/>
         </Switch>
     </HashRouter>
 );
