@@ -50,8 +50,15 @@ const booklist5= {
     price:"￥56.70",
     id:"5"
 };
-const line =[booklist1,booklist2,booklist3,booklist4,booklist5];
-const data =[line,line,line,line,line]
+const data =[   booklist1,booklist2,booklist3,booklist4,booklist5,
+                booklist1,booklist2,booklist3,booklist4,booklist5,
+                booklist1,booklist2,booklist3,booklist4,booklist5,
+                booklist1,booklist2,booklist3,booklist4,booklist5,
+                booklist1,booklist2,booklist3,booklist4,booklist5,
+                booklist1,booklist2,booklist3,booklist4,booklist5,
+                booklist1,booklist2,booklist3,booklist4,booklist5,
+];
+
 
 
 

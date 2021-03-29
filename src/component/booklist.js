@@ -1,7 +1,9 @@
 import React from "react";
 import Bookcard from "./bookcard";
+import { Progress, Tag } from 'antd';
+import ProList from '@ant-design/pro-list';
 import {Row,Col,Space} from 'antd'
-class Bookline extends React.Component{
+/*class Bookline extends React.Component{
     render() {
         return(
 
@@ -54,29 +56,44 @@ class Bookline extends React.Component{
 
         )
     }
-}
+}*/
 export default class Booklist extends React.Component {
     constructor(props) {
         super(props);
-        this.state={
-            line:this.props.bookline
+        this.state = {
+            data: this.props.bookline
         }
     }
-    render() {
 
+    render() {
+        const list = this.state.data.map(
+            (item) => ({
+                content: <Bookcard src={item.src}
+                                   bookname={item.bookname}
+                                   writer={item.writer}
+                                   price={item.price}
+                                   id={item.id}/>
+            })
+        );
 
         return (
-            <div >
-              <Space direction="vertical">
-                  <Bookline books={this.state.line[0]}/>
-                  <Bookline books={this.state.line[1]}/>
-                  <Bookline books={this.state.line[2]}/>
-                  <Bookline books={this.state.line[3]}/>
-                  <Bookline books={this.state.line[4]}/>
-              </Space>
+            /* <div >
+               <Space direction="vertical">
+                   <Bookline books={this.state.line[0]}/>
+                   <Bookline books={this.state.line[1]}/>
+                   <Bookline books={this.state.line[2]}/>
+                   <Bookline books={this.state.line[3]}/>
+                   <Bookline books={this.state.line[4]}/>
+               </Space>
 
 
-            </div>
+             </div>*/
+            <ProList pagination={{defaultPageSize: 25, showSizeChanger: false}}
+                     grid={{column: 5}}
+                     metas={{content: {}, avatar: false}} dataSource={list} size="small"
+
+            />
+
 
         )
 

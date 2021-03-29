@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'antd';
 import {Link} from 'react-router-dom'
 
+
 export default class Bookcard extends React.Component {
     render() {
 
@@ -11,7 +12,7 @@ export default class Bookcard extends React.Component {
                 pathname: '/bookview',
                 search: '?id=' + this.props.id}}>
 
-                <Card style={{ width: 200,height:350}} bodyStyle={{ padding: 1 } } hoverable={true}>
+                <Card style={{ width: 200,height:330,margin:'0'}} bodyStyle={{ padding: 1 } } hoverable={true} >
                 <div >
                     <img alt="example" width="100%" src={this.props.src} />
                 </div>
