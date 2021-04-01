@@ -1,9 +1,7 @@
 import React from "react";
-import {Table, Button, Layout, BackTop, InputNumber, Popconfirm, Card} from 'antd';
-import {CardDeck} from "react-bootstrap";
-import Cartcard from "./cartcard";
-import Cart from "../VIEW/cart";
-
+import {Card, InputNumber, Popconfirm} from 'antd';
+import { Statistic } from 'antd';
+import ProCard from '@ant-design/pro-card';
 
 const booklist1={
     src: "https://img14.360buyimg.com/n1/s200x200_jfs/t5956/203/8069473743/490021/7451586b/5983fa7dNf91302f8.jpg",
@@ -50,49 +48,57 @@ const booklist5= {
     id:"5"
 };
 const books=[booklist1,booklist2,booklist3,booklist4,booklist5];
-
-class Cartcardrender extends React.Component{
-
-}
-export default class Cartlist extends React.Component {
-
+export  default class Cartcard extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-            data: booklist1,
-            sumprice: 298.7,
-        }
+     this.state={
+         price:props.data.price,
+         num:1,
+         sumprice:props.data.price,
+         id:props.data.id
+     }
+
     }
 
-    /*  componentDidMount(){
-          this.setState({sumprice:this.state.data.price.substring(1).toNumber*this.state.data.num})
-      }
-  */
-    addprice = (price) => {
-        let pre = this.state.sumprice;
-        this.setState({
 
-            sumprice: pre + price
-        })
+
+    changeNum = (value)=> {
+
+        if (value <this.state.num) {this.props.addprice(-this.state.price*1);}
+        else if(value>this.state.num){this.props.addprice(this.state.price*1);}
+        this.setState({num: value, sumprice: (value * this.state.price).toFixed(2)})
     }
 
-    render() {
-        if (this.state.sumprice > 0)
-            return (
-                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <Cartcard data={booklist1} addprice={this.addprice}/>
-                    <Cartcard data={booklist2} addprice={this.addprice}/>
-                    <Cartcard data={booklist3} addprice={this.addprice}/>
-                    <Cartcard data={booklist4} addprice={this.addprice}/>
-                    <Cartcard data={booklist5} addprice={this.addprice}/>
-                    <div style={{
-                        fontSize: 20,
-                        color: 'red',
-                        margin: '0 auto'
-                    }}>Total:{this.state.sumprice.toFixed(2)}</div>
-                </div>
 
-            )
-        else return (<div style={{height: '100vh'}}>购物车为空</div>)
+
+    render(){
+
+            if(this.state.sumprice>0){
+                return(
+                    <Card hoverable style={{marginLeft:'30%'}}>
+                        <div style={{display:'flex',justifyContent:'space-between',width:1000,alignItems:'center'}}>
+                            <img src={this.props.data.src} style={{width:200}}/>
+                            <div>{this.props.data.bookname}</div>
+                            <div >{this.props.data.writer}</div>
+                            <InputNumber min={0} defaultValue={1} onChange={value => this.changeNum(value)}  />
+                            <div style={{fontSize:20,color:'red'}}>￥{this.state.sumprice}</div>
+
+
+                        </div>
+                    </Card>
+                )
+
+            }
+
+
+
+            else  return null;
+
+
     }
+
+
+
+
+
 }
