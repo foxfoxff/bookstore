@@ -1,6 +1,7 @@
 import React from "react";
 import {Card, InputNumber, Popconfirm} from 'antd';
 import { Statistic } from 'antd';
+import {CloseOutlined} from "@ant-design/icons";
 import ProCard from '@ant-design/pro-card';
 
 const booklist1={
@@ -67,15 +68,19 @@ export  default class Cartcard extends React.Component{
         if (value <this.state.num) {this.props.addprice(-this.state.price*1);}
         else if(value>this.state.num){this.props.addprice(this.state.price*1);}
         this.setState({num: value, sumprice: (value * this.state.price).toFixed(2)})
-    }
 
+    }
+    handleDelete = ()=>{
+        this.props.addprice(-this.state.sumprice*1);
+        this.setState({num:0,sumprice:0});
+    }
 
 
     render(){
 
             if(this.state.sumprice>0){
                 return(
-                    <Card hoverable style={{marginLeft:'30%'}}>
+                    <Card hoverable style={{marginLeft:'10%'}} extra={<CloseOutlined onClick={this.handleDelete}/>}>
                         <div style={{display:'flex',justifyContent:'space-between',width:1000,alignItems:'center'}}>
                             <img src={this.props.data.src} style={{width:200}}/>
                             <div>{this.props.data.bookname}</div>

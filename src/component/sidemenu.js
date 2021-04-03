@@ -28,7 +28,9 @@ export default class Sidemenu extends React.Component {
                 </Link>
                 </Menu.Item>
                 <Menu.Item key="5" icon={<UserOutlined />}>
-                    个人中心
+                    <Link to="./admin">
+                        书籍管理
+                    </Link>
                 </Menu.Item>
 
             </Menu>

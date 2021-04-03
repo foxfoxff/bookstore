@@ -3,18 +3,19 @@ import 'antd/dist/antd.css'
 import { Input } from 'antd';
 
 import { BackTop } from 'antd';
-import { Layout } from 'antd';
+import { Layout} from 'antd';
 import Sidemenu from "../component/sidemenu";
-import Booktable from "../component/booktable"
+
 import Upnav from "../component/upnav";
-import Cartlist from "../component/Cartlist";
+
+import Pay from "../component/pay";
 
 const { Header, Footer, Sider, Content } = Layout;
 const { Search } = Input;
 
 
 
-export default class Cart extends React.Component {
+export default class Payview extends React.Component {
 
 
     render() {
@@ -31,8 +32,10 @@ export default class Cart extends React.Component {
                     <Sider theme={"light"}>
                         <Sidemenu />
                     </Sider>
+                        <Pay />
 
-                        <Cartlist />
+
+
 
 
 

@@ -6,9 +6,8 @@ import Browser from "./VIEW/browser";
 import Signin from "./VIEW/signin";
 import BookView from "./VIEW/bookview";
 import Cart from "./VIEW/cart";
-
-
-
+import AdminView from "./VIEW/adminView";
+import Payview from "./VIEW/payview";
 
 
 const BasicRoute = () => (
@@ -20,6 +19,8 @@ const BasicRoute = () => (
             <Route exact path="/bookview" component={BookView}/>
             <Route exact path="/register" component={Signin}/>
             <Route exact path="/cart" component={Cart}/>
+            <Route exact path="/admin" component={AdminView}/>
+            <Route exact path="/pay" component={Payview}/>
         </Switch>
     </HashRouter>
 );

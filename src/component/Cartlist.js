@@ -1,8 +1,7 @@
 import React from "react";
-import {Table, Button, Layout, BackTop, InputNumber, Popconfirm, Card} from 'antd';
-import {CardDeck} from "react-bootstrap";
+import AdminRow from "./adminrow";
 import Cartcard from "./cartcard";
-import Cart from "../VIEW/cart";
+import {Button} from "antd";
 
 
 const booklist1={
@@ -90,9 +89,13 @@ export default class Cartlist extends React.Component {
                         color: 'red',
                         margin: '0 auto'
                     }}>Total:{this.state.sumprice.toFixed(2)}</div>
+                    <Button danger>结算</Button>
                 </div>
 
+
             )
-        else return (<div style={{height: '100vh'}}>购物车为空</div>)
+        else return (
+            <div style={{height: '100vh'}}>购物车为空</div>
+        )
     }
 }

@@ -98,9 +98,6 @@ export default class Homepage extends React.Component {
                     </Content>
             </Layout>
 
-
-
-
         </Layout>
 
 

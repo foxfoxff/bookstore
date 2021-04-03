@@ -89,13 +89,6 @@ export default class Browser extends React.Component {
                             <div style={{margin:'0 auto',width:'1000px'}}>
                                 <Booklist bookline={data} />
                             </div>
-
-
-
-
-
-
-
                     </Content>
                 </Layout>
 
