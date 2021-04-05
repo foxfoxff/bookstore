@@ -114,8 +114,9 @@ export default class Pay extends React.Component{
                     <Step status="wait" title="Pay" icon={<PayCircleOutlined />} />
                     <Step status="wait" title="Done" icon={<SmileOutlined />} />
                 </Steps>
-                <div style={{display:'flex'}}>
-                    <div style={{display:'flex',flexDirection:'column',justifyContent:'start'}}>
+                <div style={{display:'flex',justifyContent:'end'}}>
+                    <div style={{width:300}}></div>
+                    <div style={{display:'flex',flexDirection:'column',justifyContent:'space-around'}}>
                         <div> 收货人:<input /></div>
                         <div> 联系方式:<input /></div>
                         <div> 地址:<input /></div>
@@ -124,7 +125,7 @@ export default class Pay extends React.Component{
                         <div><h3>总价：￥298.7</h3></div>
                         <Button>立即支付</Button>
                     </div>
-
+                    <div style={{width:600}}></div>
                     <List
                         header={<div style={{textAlign:"center"}}>购物清单</div>}
                         style={{marginRight:0}}

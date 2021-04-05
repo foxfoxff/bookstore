@@ -8,6 +8,7 @@ import Sidemenu from "../component/sidemenu";
 import Booktable from "../component/booktable"
 import Upnav from "../component/upnav";
 import Cartlist from "../component/Cartlist";
+import Bottom from "../component/footer";
 
 const { Header, Footer, Sider, Content } = Layout;
 const { Search } = Input;
@@ -27,7 +28,7 @@ export default class Cart extends React.Component {
                     <Upnav />
                 </Header>
                 <BackTop />
-                <Layout>
+                <Layout style={{minHeight:'90vh'}}>
                     <Sider theme={"light"}>
                         <Sidemenu />
                     </Sider>
@@ -37,7 +38,7 @@ export default class Cart extends React.Component {
 
 
                 </Layout>
-
+                <Bottom />
 
 
 

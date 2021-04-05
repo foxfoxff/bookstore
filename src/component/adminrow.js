@@ -35,12 +35,12 @@ export default class AdminRow extends React.Component {
             writer: this.writerInput.value,
         })
         let newdata = {
-            src: this.state.src,
-            bookname: this.state.bookname,
-            writer: this.state.bookname.writer,
+            src: this.myInput.value,
+            bookname: this.nameInput.value,
+            writer: this.writerInput.value,
             price: this.state.price,
             num: 999,
-            key: "4"
+            key: this.state.key,
         }
         this.props.changebook(newdata)
     }
@@ -57,12 +57,15 @@ export default class AdminRow extends React.Component {
 
     }
     changePrice = (value) => {
-        this.setState({price: value})
+        let a=""+value;
+        this.setState({price: a})
 
 
     }
     handleDelete = () => {
-        this.setState({num: -1})
+        this.setState({num: -1});
+
+
     }
 
 

@@ -5,6 +5,7 @@ import { Input,Form,Checkbox} from 'antd';
 import { UserOutlined,LockOutlined } from '@ant-design/icons';
 import '../CSS/usedfont.css'
 import {Link} from "react-router-dom";
+import Bottom from "../component/footer";
 
 const { Header, Footer,  Content } = Layout;
 export default class Login extends React.Component {
@@ -72,6 +73,8 @@ export default class Login extends React.Component {
 
                 </div>
 
+
+            <Bottom/>
 
 
 

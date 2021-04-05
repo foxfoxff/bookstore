@@ -52,13 +52,17 @@ export default class Bookdetail extends React.Component{
         super(props);
         this.state={
             num:1,
-            bookid:this.props.id
+            bookid:this.props.id,
+            price:data[this.props.id-1].price.substring(1),
+            sumprice:data[this.props.id-1].price.substring(1)
         }
 
 
     }
-    changeNum = (value)=>{
-        this.setState({num:value})
+    changeNum = (value)=> {
+
+
+        this.setState({num: value, sumprice: (value * this.state.price).toFixed(2)})
 
     }
 
@@ -72,7 +76,7 @@ export default class Bookdetail extends React.Component{
                     <div className={"book-detail"} style={{display:'flex'}}>
                         <div className={"book-image"}><img alt="image" src= {data[this.state.bookid-1].src} style={{width:"350px", height:"350px"}}/></div>
                         <div className={"descriptions"}>
-                            <Descriptions>
+                            <Descriptions style={{marginLeft:100}}>
                                 <Descriptions.Item className={"title"} span={3}>{data[this.state.bookid-1].bookname}</Descriptions.Item>
                                 <Descriptions.Item label={"出版社"} span={3}>{data[this.state.bookid-1].writer}</Descriptions.Item>
                                 <Descriptions.Item label={"分类"} span={3}>互联网</Descriptions.Item>
@@ -80,11 +84,13 @@ export default class Bookdetail extends React.Component{
                                 <Descriptions.Item label={"状态 "} span={3}>有货</Descriptions.Item>
                                 <Descriptions.Item label={"作品简介"} span={3}>好书</Descriptions.Item>
                                 </Descriptions>
-                            <div className="def-number-input number-input">
+                            <div className="def-number-input number-input" style={{marginLeft:100}}>
                                     数量:
-                                <InputNumber min={1} defaultValue={1} onChange={this.changeNum}/>
+                                <InputNumber min={0} defaultValue={1} onChange={value =>  this.changeNum(value)}  />
 
+                                <div style={{marginTop:15}}> 总价:<span style={{color:'red'}}>￥{this.state.sumprice}</span></div>
                             </div>
+
                         </div>
                     </div>
                     <div className={"button-groups"} style={{textAlign:'center'}}>

@@ -96,7 +96,12 @@ export default class Cartlist extends React.Component {
 
             )
         else return (
-            <div style={{height: '100vh'}}>购物车为空</div>
+            <div style={{height: '90vh',textAlign:'center'}}>
+
+
+                购物车为空
+
+            </div>
         )
     }
 }

@@ -8,7 +8,7 @@ import Sidemenu from "../component/sidemenu";
 import Booktable from "../component/booktable"
 import Upnav from "../component/upnav";
 import Searchbar from "../component/search";
-
+import Bottom from "../component/footer";
 
 
 const { Header, Footer, Sider, Content } = Layout;
@@ -97,7 +97,7 @@ export default class Homepage extends React.Component {
 
                     </Content>
             </Layout>
-
+            <Bottom />
         </Layout>
 
 

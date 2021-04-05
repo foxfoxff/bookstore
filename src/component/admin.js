@@ -10,7 +10,7 @@ const booklist1={
     writer:"中国水利水电出版",
     price:"67.40",
     num:999,
-    key:"1"
+    key:1
 
 };
 const booklist2={
@@ -20,7 +20,7 @@ const booklist2={
     writer: "电子工业出版社",
     price:"68.10",
     num:999,
-    key:"2"
+    key:2
 };
 const booklist3= {
     edit:false,
@@ -29,7 +29,7 @@ const booklist3= {
     writer:"明日科技",
     price:"49.80",
     num:999,
-    key:"3"
+    key:3
 };
 const booklist4= {
     edit:false,
@@ -38,7 +38,7 @@ const booklist4= {
     writer:"毛泽东 著",
     price:"56.70",
     num:999,
-    key:"4"
+    key:4
 };
 const booklist5= {
     edit:false,
@@ -47,7 +47,7 @@ const booklist5= {
     writer:"周志明 著",
     price:"56.70",
     num:999,
-    key:"5"
+    key:5
 };
 const data=[booklist1,booklist2,booklist3,booklist4,booklist5];
 const {Search} =Input
@@ -58,7 +58,8 @@ export default class Admin extends React.Component {
         super(props);
         this.state = {
             bookdata: data,
-            filter:""
+            filter:"",
+            numkey:6
         }
     }
 
@@ -70,25 +71,46 @@ export default class Admin extends React.Component {
             writer: "",
             price: "",
             num: 1,
-            key: "4"
+            key: this.state.numkey
         })
+        let sum=this.state.numkey;
         this.setState({
                 bookdata: data,
+                numkey:sum+1
             }
         )
+        console.log(data);
     }
     changeBook = (item) => {
         let tar = data.findIndex((dat) => (dat.key === item.key));
-        data[tar] = item
+        data[tar] = item;
+
+
         this.setState({
                 bookdata: data,
             }
         )
+
+    }
+    deleteBook = (item) =>{
+        let tar = data.findIndex((dat) => (dat.key === item.key));
+        data.splice(tar,1);
+        console.log(data);
+        this.setState({
+                bookdata: data,
+            }
+        )
+
     }
 
     handleSearch = (value)=>{
         this.setState({filter:value})
     }
+  /*  componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.bookdata!=this.props.bookdata){
+
+        }
+    }*/
 
 
     render() {
@@ -101,14 +123,16 @@ export default class Admin extends React.Component {
                         allowClear
                         onSearch={this.handleSearch}/>
 
-                {this.state.bookdata.map((item) =>
+               {this.state.bookdata.map((item) =>
 
-                  item.bookname.toLowerCase().includes(this.state.filter.toLowerCase()) ? <AdminRow data={item} changebook={this.changeBook}/>:null
+                  item.bookname.toLowerCase().includes(this.state.filter.toLowerCase()) ? <AdminRow data={item} changebook={this.changeBook} />:null
 
                 )}
 
+
+
                 <Button onClick={this.addbook} style={{marginTop: 20, width: 1000}} type="primary" ghost>添加</Button>
-                <div style={{height: 300}}> footer</div>
+
             </div>
 
 
@@ -118,7 +142,6 @@ export default class Admin extends React.Component {
 
 
 }
-
 
 
 

@@ -80,14 +80,14 @@ export  default class Cartcard extends React.Component{
 
             if(this.state.sumprice>0){
                 return(
-                    <Card hoverable style={{marginLeft:'10%'}} extra={<CloseOutlined onClick={this.handleDelete}/>}>
-                        <div style={{display:'flex',justifyContent:'space-between',width:1000,alignItems:'center'}}>
-                            <img src={this.props.data.src} style={{width:200}}/>
+                    <Card hoverable style={{marginLeft:'10%'}} >
+                        <div style={{display:'flex',justifyContent:'space-between',width:900,alignItems:'center'}}>
+                            <img src={this.props.data.src} style={{width:120}}/>
                             <div>{this.props.data.bookname}</div>
                             <div >{this.props.data.writer}</div>
                             <InputNumber min={0} defaultValue={1} onChange={value => this.changeNum(value)}  />
                             <div style={{fontSize:20,color:'red'}}>￥{this.state.sumprice}</div>
-
+                            <CloseOutlined onClick={this.handleDelete}/>
 
                         </div>
                     </Card>

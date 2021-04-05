@@ -4,6 +4,7 @@ import { Layout} from 'antd';
 import Upnav from "../component/upnav";
 import Bookdetail from "../component/bookdetail";
 import Sidemenu from "../component/sidemenu";
+import Bottom from "../component/footer";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -38,6 +39,7 @@ class BookView extends React.Component {
                         </div>
                     </Content>
                 </Layout>
+                <Bottom />
             </Layout>
         )
     }

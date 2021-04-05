@@ -5,6 +5,7 @@ import Upnav from "../component/upnav";
 import Sidemenu from "../component/sidemenu";
 import Booklist from "../component/booklist";
 import Searchbar from "../component/search";
+import Bottom from "../component/footer";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -92,7 +93,7 @@ export default class Browser extends React.Component {
                     </Content>
                 </Layout>
 
-
+                <Bottom />
 
 
             </Layout>

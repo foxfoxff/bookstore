@@ -18,23 +18,23 @@ class Upnav extends React.Component {
                 <div className="nav">
                     <ul>
                         <li>
-                            <Link to="/technology">
+                            <Link to="/">
                                 登录
                             </Link>
                         </li>
                         <li>
-                            <Link to="/case">
+                            <Link to="/register">
                                 注册
                             </Link>
                         </li>
                         <li>
-                            <Link to="/about">
+                            <Link to="/">
 
                                 个人中心
                             </Link>
                         </li>
                         <li>
-                            <Link to="/join">
+                            <Link to="/">
                                 关于网站
                             </Link>
                         </li>
