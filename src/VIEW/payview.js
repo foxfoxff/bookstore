@@ -34,11 +34,6 @@ export default class Payview extends React.Component {
                     </Sider>
                         <Pay />
 
-
-
-
-
-
                 </Layout>
 
 

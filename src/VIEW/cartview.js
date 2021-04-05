@@ -32,7 +32,7 @@ export default class Cart extends React.Component {
                         <Sidemenu />
                     </Sider>
 
-                        <Cartlist />
+                    <Cartlist />
 
 
 

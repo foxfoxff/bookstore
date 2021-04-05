@@ -71,11 +71,11 @@ export default class AdminRow extends React.Component {
             return (
 
 
-                    <Card hoverable style={{ width: 1000}}
+                    <Card hoverable style={{ width: 1000,height:217}}
                           actions={[<a key="list-loadmore-edit" onClick={this.handleEdit}>edit</a>,
                               <a key="list-loadmore-more" onClick={this.handleDelete}>delete</a>]}>
                         <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-                            <img src={this.state.src} style={{width: 200}}/>
+                            <img src={this.state.src} style={{width: 130}}/>
                             <div>{this.state.bookname}</div>
                             <div>{this.state.writer}</div>
                             <div>库存:{this.state.num}</div>

@@ -5,7 +5,7 @@ import Homepage from './VIEW/homepage';
 import Browser from "./VIEW/browser";
 import Signin from "./VIEW/signin";
 import BookView from "./VIEW/bookview";
-import Cart from "./VIEW/cart";
+import Cart from "./VIEW/cartview";
 import AdminView from "./VIEW/adminView";
 import Payview from "./VIEW/payview";
 

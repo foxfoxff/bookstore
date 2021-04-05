@@ -24,7 +24,6 @@ class Upnav extends React.Component {
                         </li>
                         <li>
                             <Link to="/case">
-
                                 注册
                             </Link>
                         </li>

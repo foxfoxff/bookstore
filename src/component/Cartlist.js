@@ -2,6 +2,7 @@ import React from "react";
 import AdminRow from "./adminrow";
 import Cartcard from "./cartcard";
 import {Button} from "antd";
+import {Link} from "react-router-dom";
 
 
 const booklist1={
@@ -89,7 +90,7 @@ export default class Cartlist extends React.Component {
                         color: 'red',
                         margin: '0 auto'
                     }}>Total:{this.state.sumprice.toFixed(2)}</div>
-                    <Button danger>结算</Button>
+                    <Link to ="/pay"><Button danger>结算</Button></Link>
                 </div>
 
 
