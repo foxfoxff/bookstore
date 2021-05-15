@@ -6,6 +6,7 @@ import Sidemenu from "../component/sidemenu";
 import Booklist from "../component/booklist";
 import Searchbar from "../component/search";
 import Bottom from "../component/footer";
+import {getBooks} from "../service/bookService";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -66,6 +67,16 @@ const data =[   booklist1,booklist2,booklist3,booklist4,booklist5,
 
 export default class Browser extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+    }
+
+    componentDidMount(){
+        let user = localStorage.getItem("user");
+        this.setState({user:user});
+    }
+
 
     render() {
 
@@ -88,7 +99,7 @@ export default class Browser extends React.Component {
                             </div>*/}
                             <div style={{height:50}}></div>
                             <div style={{margin:'0 auto',width:'1000px'}}>
-                                <Booklist bookline={data} />
+                                <Booklist  />
                             </div>
                     </Content>
                 </Layout>

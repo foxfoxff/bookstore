@@ -9,6 +9,7 @@ import Sidemenu from "../component/sidemenu";
 import Upnav from "../component/upnav";
 
 import Pay from "../component/pay";
+import Bottom from "../component/footer";
 
 const { Header, Footer, Sider, Content } = Layout;
 const { Search } = Input;
@@ -35,14 +36,9 @@ export default class Payview extends React.Component {
                         <Pay />
 
                 </Layout>
-
-
-
+                <Bottom />
 
             </Layout>
-
-
-
 
 
         )

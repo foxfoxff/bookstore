@@ -22,30 +22,25 @@ export default class Cart extends React.Component {
 
         return (
 
-            <Layout >
+            <Layout>
 
-                <Header >
-                    <Upnav />
+                <Header>
+                    <Upnav/>
                 </Header>
-                <BackTop />
-                <Layout style={{minHeight:'90vh'}}>
+                <BackTop/>
+                <Layout style={{minHeight: '90vh'}}>
                     <Sider theme={"light"}>
-                        <Sidemenu />
+                        <Sidemenu/>
                     </Sider>
 
-                    <Cartlist />
-
+                    <Cartlist/>
 
 
                 </Layout>
-                <Bottom />
-
+                <Bottom/>
 
 
             </Layout>
-
-
-
 
 
         )

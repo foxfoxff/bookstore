@@ -67,7 +67,6 @@ const books=[booklist1,booklist2,booklist3,booklist4,booklist5];
 
         return (
 
-
             <Card  style={{marginLeft:'10%'}} hoverable bordered={true} >
                 <div style={{display:'flex',justifyContent:'space-between',width:480,alignItems:'center'}}>
                     <img src={this.props.src} style={{width:50}}/>
@@ -75,7 +74,6 @@ const books=[booklist1,booklist2,booklist3,booklist4,booklist5];
                     <div >{this.props.writer}</div>
 
                     <div style={{fontSize:15,color:'red'}}>￥{this.props.price}</div>
-
 
                 </div>
                 </Card>

@@ -3,7 +3,8 @@ import AdminRow from "./adminrow";
 import Cartcard from "./cartcard";
 import {Button} from "antd";
 import {Link} from "react-router-dom";
-
+import {getCart} from "../service/bookService";
+import Bookcard from "./bookcard";
 
 const booklist1={
     src: "https://img14.360buyimg.com/n1/s200x200_jfs/t5956/203/8069473743/490021/7451586b/5983fa7dNf91302f8.jpg",
@@ -61,13 +62,18 @@ export default class Cartlist extends React.Component {
         this.state = {
             data: booklist1,
             sumprice: 298.7,
+            cartdata:[]
         }
     }
 
-    /*  componentDidMount(){
-          this.setState({sumprice:this.state.data.price.substring(1).toNumber*this.state.data.num})
-      }
-  */
+     componentDidMount()
+     {
+          //this.setState({sumprice:this.state.data.price.substring(1).toNumber*this.state.data.num})
+         const callback=(data)=>this.setState({cartdata:data})
+         getCart(callback);
+
+    }
+
     addprice = (price) => {
         let pre = this.state.sumprice;
         this.setState({
@@ -77,10 +83,22 @@ export default class Cartlist extends React.Component {
     }
 
     render() {
+        let list=[];
+        this.state.cartdata.forEach((item, index, array) => {
+
+                let newnode= <Cartcard id={item}/>
+
+                console.log(item);
+                list.push(newnode);
+
+        })
+        console.log(this.state.cartdata);
+
+
         if (this.state.sumprice > 0)
             return (
-                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <Cartcard data={booklist1} addprice={this.addprice}/>
+                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center',width:'100%',marginTop:20}}>
+                  {/*  <Cartcard data={booklist1} addprice={this.addprice}/>
                     <Cartcard data={booklist2} addprice={this.addprice}/>
                     <Cartcard data={booklist3} addprice={this.addprice}/>
                     <Cartcard data={booklist4} addprice={this.addprice}/>
@@ -89,17 +107,21 @@ export default class Cartlist extends React.Component {
                         fontSize: 20,
                         color: 'red',
                         margin: '0 auto'
-                    }}>Total:{this.state.sumprice.toFixed(2)}</div>
+                    }}>Total:{this.state.sumprice.toFixed(2)}</div>*/}
+
+                    {list}
+
+
                     <Link to ="/pay"><Button danger>结算</Button></Link>
                 </div>
 
 
             )
         else return (
-            <div style={{height: '90vh',textAlign:'center'}}>
+            <div style={{marginLeft:'500' ,width:'100%',textAlign:'center'}}>
 
+                <div style={{marginTop:200,fontSize:25}}>购物车为空</div>
 
-                购物车为空
 
             </div>
         )

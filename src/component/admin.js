@@ -106,11 +106,7 @@ export default class Admin extends React.Component {
     handleSearch = (value)=>{
         this.setState({filter:value})
     }
-  /*  componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevProps.bookdata!=this.props.bookdata){
 
-        }
-    }*/
 
 
     render() {

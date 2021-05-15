@@ -2,7 +2,8 @@ import React from "react";
 import {Card, InputNumber, Popconfirm} from 'antd';
 import { Statistic } from 'antd';
 import {CloseOutlined} from "@ant-design/icons";
-import ProCard from '@ant-design/pro-card';
+import {getBookById} from "../service/bookService";
+
 
 const booklist1={
     src: "https://img14.360buyimg.com/n1/s200x200_jfs/t5956/203/8069473743/490021/7451586b/5983fa7dNf91302f8.jpg",
@@ -53,17 +54,33 @@ export  default class Cartcard extends React.Component{
     constructor(props) {
         super(props);
      this.state={
-         price:props.data.price,
+        /* price:props.data.price,
          num:1,
          sumprice:props.data.price,
-         id:props.data.id
+         id:props.data.id*/
+         bookdata:null
      }
 
     }
+    handleBookInfo = data => {
+        this.setState({
+            bookname: data.name,
+            price: data.price,
+            src: data.image,
+            bookid:data.id,
+            description: data.description,
+            writer: data.author,
+            type:data.type,
+            left:data.age
+        }, () => {
+        });
+    };
+    componentDidMount() {
+        getBookById(this.props.id, this.handleBookInfo);
 
+    }
 
-
-    changeNum = (value)=> {
+   /* changeNum = (value)=> {
 
         if (value <this.state.num) {this.props.addprice(-this.state.price*1);}
         else if(value>this.state.num){this.props.addprice(this.state.price*1);}
@@ -73,21 +90,21 @@ export  default class Cartcard extends React.Component{
     handleDelete = ()=>{
         this.props.addprice(-this.state.sumprice*1);
         this.setState({num:0,sumprice:0});
-    }
+    }*/
 
 
     render(){
 
             if(this.state.sumprice>0){
                 return(
-                    <Card hoverable style={{marginLeft:'10%'}} >
+                    <Card hoverable  >
                         <div style={{display:'flex',justifyContent:'space-between',width:900,alignItems:'center'}}>
-                            <img src={this.props.data.src} style={{width:120}}/>
-                            <div>{this.props.data.bookname}</div>
-                            <div >{this.props.data.writer}</div>
-                            <InputNumber min={0} defaultValue={1} onChange={value => this.changeNum(value)}  />
-                            <div style={{fontSize:20,color:'red'}}>￥{this.state.sumprice}</div>
-                            <CloseOutlined onClick={this.handleDelete}/>
+                            <img src={this.state.state.src} style={{width:120}}/>
+                            <div>{this.state.state.bookname}</div>
+                            <div >{this.state.state.writer}</div>
+                            {/*<InputNumber min={0} defaultValue={1} onChange={value => this.changeNum(value)}  />*/}
+                            <div style={{fontSize:20,color:'red'}}>￥{this.state.price}</div>
+                            {/*<CloseOutlined onClick={this.handleDelete}/>*/}
 
                         </div>
                     </Card>

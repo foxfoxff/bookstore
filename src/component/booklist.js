@@ -4,38 +4,51 @@ import {Progress, Tag, List, Breadcrumb} from 'antd';
 import ProList from '@ant-design/pro-list';
 import {Row,Col,Space} from 'antd'
 import { Input} from 'antd';
-
+import {getBooks} from "../service/bookService";
 
 const { Search } = Input;
 export default class Booklist extends React.Component {
-    constructor(props) {
+  /*  constructor(props) {
         super(props);
         this.state = {
             data: this.props.bookline,
 
             flitter:""
         }
+    }*/
+    constructor(props) {
+        super(props);
+        this.state = {books:[],filter:""};
     }
- handleSearch=(e)=>{
-        if(e!=null)
-        this.setState({flitter:e})
-     else this.setState({flitter:""})
- }
 
+ componentDidMount() {
+     const callback =  (data) => {
+         this.setState({books:data});
+     };
+
+     getBooks({}, callback);
+ }
+    handleSearch = (value)=>{
+        this.setState({filter:value})
+
+    }
     render() {
 
         let list=[];
-        this.state.data.forEach((item, index, array) => {
-            if(item.bookname.toLowerCase().includes(this.state.flitter.toLowerCase())){
-                let newnode={ content: <Bookcard src={item.src}
-                                                 bookname={item.bookname}
-                                                 writer={item.writer}
+        this.state.books.forEach((item, index, array) => {
+            if(item.name.toLowerCase().includes(this.state.filter.toLowerCase())){
+                let newnode={ content: <Bookcard src={item.image.toString()}
+                                                 bookname={item.name}
+                                                 writer={item.author}
                                                  price={item.price}
                                                  id={item.id}/>}
-                  list.push(newnode);
+
+
+                list.push(newnode);
             }
         })
 
+        console.log(this.state.books);
         return (
             <div  style={{display:'flex',flexDirection:'column',justifyContent:'space-between',alignItems:'center'}}>
                 <div style={{height:80,order:'1'}}>
